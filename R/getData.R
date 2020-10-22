@@ -47,7 +47,7 @@ getData <- function(){
       select(selectedCols) %>%
       rename('Country' = countryName,
              'Date' = dateName) -> df
-    try(df$Date <- as.Date(df$Date))
+    try(df$Date <- as_date(df$Date))
 
     mainDF <<- rbind(mainDF, df)
     pb$tick()
