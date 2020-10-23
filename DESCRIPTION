@@ -11,3 +11,5 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/alibalapour/CovidAtion19
 BugReports: https://github.com/alibalapour/CovidAtion19/issues
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
