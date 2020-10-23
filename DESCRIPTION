@@ -7,21 +7,11 @@ Authors@R:
            role = c("aut", "cre"),
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: A package to get every day and cumulative data
+    about Covid-19 and draw some plots about it.
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
-Imports: 
-    RCurl,
-    lubridate,
-    progress,
-    tidyr,
-    sf,
-    rnaturalearth,
-    rnaturalearthdata,
-    rgeos
-Depends: 
-    tidyverse
