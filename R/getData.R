@@ -52,9 +52,9 @@ getData <- function(){
     mainDF <<- rbind(mainDF, df)
     pb$tick()
   })
+
   mainDF %>%
     replace_na(list(Deaths = 0, Confirmed = 0)) -> mainDF
 
-
-  return(df)
+  return(mainDF)
 }
