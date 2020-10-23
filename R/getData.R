@@ -12,6 +12,7 @@ getData <- function(){
   pb <- progress_bar$new(total = dateInterval)
   notImportant <- sapply(1:dateInterval, function(i){
     date <- (as_date("2020-01-22") + days(i))
+
     day <- day(date)
     day <- ifelse(day < 10, paste('0', day, sep=''), as.character(day))
     month <- month(date)
@@ -27,7 +28,6 @@ getData <- function(){
     }
 
     df <- read.csv(path)
-
 
     countryName <- ''
     dateName <- ''
@@ -47,14 +47,43 @@ getData <- function(){
       select(selectedCols) %>%
       rename('Country' = countryName,
              'Date' = dateName) -> df
-    try(df$Date <- as_date(df$Date))
+
+
+    df$Date <- str_extract(date, '[0-9]+-[0-9]+-[0-9]+')
 
     mainDF <<- rbind(mainDF, df)
     pb$tick()
   })
 
-  mainDF %>%
-    replace_na(list(Deaths = 0, Confirmed = 0)) -> mainDF
+  df <- mainDF
 
-  return(mainDF)
+  df %>%
+    mutate(Country = case_when(
+      Country == 'Mainland China' ~ 'China',
+      TRUE ~ as.character(Country)
+    )) -> df
+
+  df$Date <- as_date(df$Date, format = '%m-%d-%Y')
+  df %>%
+    replace_na(list(Deaths = 0, Confirmed = 0)) -> df
+
+  df %>%group_by(Date, Country) %>%
+    summarise(Confirmed = sum(Confirmed), Deaths = sum(Deaths)) %>%
+    group_by(Date) %>%
+    arrange(Country) %>%
+    group_by(Country, Date) %>%
+    summarise(Country, Confirmed, Deaths) %>%
+    mutate(DailyConfirmed = Confirmed - lag(Confirmed),
+           DailyDeaths = Deaths - lag(Deaths)) %>%
+    replace_na(list(DailyDeaths = 0, DailyConfirmed = 0)) %>%
+    mutate(DailyDeaths = case_when(
+      DailyDeaths < 0 ~ 0,
+      TRUE ~ DailyDeaths
+    ), DailyConfirmed = case_when(
+      DailyConfirmed < 0 ~ 0,
+      TRUE ~ DailyConfirmed
+    ))-> df
+
+
+  return(df)
 }
