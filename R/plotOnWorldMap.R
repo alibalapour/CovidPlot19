@@ -6,6 +6,16 @@ library(rnaturalearthdata)
 library(rgeos)
 
 
+
+#' plotOnWorldMap
+#'
+#' Draw a World map which each countrie's color(fill) showing number of selected type(Daily Cases, Daily Deaths, All Deaths, All Cases)
+#' @param date, a string on format 'year-month-day'
+#' @param type, a string which can be 'Confirmed', 'Deaths', 'DailyConfirmed', 'DailyDeaths'
+#' @examples
+#' plotOnWorldMap('2020-10-21', 'DailyConfirmed')
+#' @import getData
+#' @export
 plotOnWorldMap <- function(date, type){
   main_df <- getData()
 

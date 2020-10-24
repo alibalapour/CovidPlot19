@@ -2,8 +2,7 @@
 % Please edit documentation in R/getData.R
 \name{getData}
 \alias{getData}
-\title{getData
-Provides a General dataset of daily and Cumulative cases and deaths of covid-19}
+\title{getData}
 \usage{
 getData()
 }
@@ -11,7 +10,6 @@ getData()
 a DataFrame grouped by Country and Date has the number of deaths and cases and daily deaths and daily cases
 }
 \description{
-getData
 Provides a General dataset of daily and Cumulative cases and deaths of covid-19
 }
 \examples{

@@ -1,6 +1,16 @@
 library(tidyverse)
 library(lubridate)
 
+
+#' plotTimeSeries
+#'
+#' Draw a time series line plot based on number of type(Daily Cases, Daily Deaths, All Deaths, All Cases) per date
+#' @param startDate, a string on format 'year-month-day'
+#' @param type, a string which can be 'Confirmed', 'Deaths', 'DailyConfirmed', 'DailyDeaths'
+#' @examples
+#' plotOnWorldMap('2020-10-21', 'DailyConfirmed')
+#' @import getData
+#' @export
 plotTimeSeries <- function(startDate, endDate, country, type){
   df <- getData()
 

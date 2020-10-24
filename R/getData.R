@@ -6,6 +6,7 @@ library(tidyr)
 
 
 #' getData
+#'
 #' Provides a General dataset of daily and Cumulative cases and deaths of covid-19
 #' @return a DataFrame grouped by Country and Date has the number of deaths and cases and daily deaths and daily cases
 #' @examples
@@ -96,3 +97,4 @@ getData <- function(){
 
   return(df)
 }
+
