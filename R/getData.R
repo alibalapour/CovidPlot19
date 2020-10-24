@@ -35,29 +35,32 @@ getData <- function(){
 
     df <- read.csv(path)
 
-    countryName <- ''
-    dateName <- ''
-    selectedCols <- c('Confirmed', 'Deaths')
-    for (j in names(df)){
-      if(! is.na(str_extract(j, 'Country'))){
-        selectedCols <- append(selectedCols, j)
-        countryName <- j
+    if(nrow(df) != 0){
+      countryName <- ''
+      dateName <- ''
+
+          selectedCols <- c('Confirmed', 'Deaths')
+      for (j in names(df)){
+        if(! is.na(str_extract(j, 'Country'))){
+          selectedCols <- append(selectedCols, j)
+          countryName <- j
+        }
+        if(! is.na(str_extract(j, 'Update'))){
+          selectedCols <- append(selectedCols, j)
+          dateName <- j
+        }
       }
-      if(! is.na(str_extract(j, 'Update'))){
-        selectedCols <- append(selectedCols, j)
-        dateName <- j
-      }
+
+      df %>%
+        select(selectedCols) %>%
+        rename('Country' = countryName,
+               'Date' = dateName) -> df
+
+
+      df$Date <- str_extract(date, '[0-9]+-[0-9]+-[0-9]+')
+
+      mainDF <<- rbind(mainDF, df)
     }
-
-    df %>%
-      select(selectedCols) %>%
-      rename('Country' = countryName,
-             'Date' = dateName) -> df
-
-
-    df$Date <- str_extract(date, '[0-9]+-[0-9]+-[0-9]+')
-
-    mainDF <<- rbind(mainDF, df)
     pb$tick()
   })
 
