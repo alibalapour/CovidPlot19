@@ -2,4 +2,5 @@
 
 export(getData)
 export(plotOnWorldMap)
+export(plotTimeSeries)
 import(getData)
