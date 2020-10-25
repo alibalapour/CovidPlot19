@@ -12,6 +12,3 @@ a DataFrame grouped by Country and Date has the number of deaths and cases and d
 \description{
 Provides a General dataset of daily and Cumulative cases and deaths of covid-19
 }
-\examples{
-df <- getData()
-}

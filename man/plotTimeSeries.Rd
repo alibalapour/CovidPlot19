@@ -18,6 +18,3 @@ plotTimeSeries(startDate, endDate, country, type)
 \description{
 Draw a time series line plot based on number of type(Daily Cases, Daily Deaths, All Deaths, All Cases)
 }
-\examples{
-plotTimeSeries('2020-9-21', '2020-10-21', 'US', 'DailyConfirmed')
-}

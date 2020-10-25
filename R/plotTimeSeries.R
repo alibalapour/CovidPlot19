@@ -9,9 +9,6 @@ library(lubridate)
 #' @param endDate, a string on format 'year-month-day', shows end date. endDate must be greater than startDate
 #' @param country, a string of selected country
 #' @param type, a string which can be 'Confirmed', 'Deaths', 'DailyConfirmed', 'DailyDeaths'
-#' @examples
-#' plotTimeSeries('2020-9-21', '2020-10-21', 'US', 'DailyConfirmed')
-#' @import getData
 #' @export
 plotTimeSeries <- function(startDate, endDate, country, type){
   df <- getData()

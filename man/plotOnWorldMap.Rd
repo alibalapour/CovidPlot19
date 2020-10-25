@@ -14,6 +14,3 @@ plotOnWorldMap(date, type)
 \description{
 Draw a World map which each countrie's color(fill) showing number of selected type(Daily Cases, Daily Deaths, All Deaths, All Cases)
 }
-\examples{
-plotOnWorldMap('2020-10-21', 'DailyConfirmed')
-}
