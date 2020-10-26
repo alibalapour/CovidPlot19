@@ -4,6 +4,8 @@ library(sf)
 library(rnaturalearth)
 library(rnaturalearthdata)
 library(rgeos)
+globalVariables(c('name'))
+
 
 
 
@@ -12,6 +14,15 @@ library(rgeos)
 #' Draw a World map which each countrie's color(fill) showing number of selected type(Daily Cases, Daily Deaths, All Deaths, All Cases)
 #' @param date, a string on format 'year-month-day'
 #' @param type, a string which can be 'Confirmed', 'Deaths', 'DailyConfirmed', 'DailyDeaths'
+#' @import tidyverse
+#' @import sf
+#' @import rnaturalearth
+#' @import rnaturalearthdata
+#' @import rgeos
+#' @import ggplot2
+#' @import dplyr
+#' @importMethodsFrom dplyr select rename mutate case_when group_by summarise arrange lag filter left_join
+#' @importMethodsFrom ggplot2 ggplot geom_sf aes_string scale_fill_viridis_c
 #' @export
 plotOnWorldMap <- function(date, type){
   main_df <- getData()

@@ -9,8 +9,15 @@ library(lubridate)
 #' @param endDate, a string on format 'year-month-day', shows end date. endDate must be greater than startDate
 #' @param country, a string of selected country
 #' @param type, a string which can be 'Confirmed', 'Deaths', 'DailyConfirmed', 'DailyDeaths'
+#' @import tidyverse
+#' @import lubridate
+#' @import ggplot2
+#' @import dplyr
+#' @importMethodsFrom dplyr select rename mutate case_when group_by summarise arrange lag filter left_join
+#' @importMethodsFrom ggplot2 ggplot aes geom_line aes_string labs
 #' @export
 plotTimeSeries <- function(startDate, endDate, country, type){
+
   df <- getData()
 
   df %>%

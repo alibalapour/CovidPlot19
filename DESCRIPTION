@@ -9,8 +9,7 @@ Authors@R:
            comment = c(ORCID = "YOUR-ORCID-ID"))
 Description: A package to get every day and cumulative data
     about Covid-19 and draw some plots about it.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -23,6 +22,9 @@ Imports:
     sf,
     rnaturalearth,
     rnaturalearthdata,
-    rgeos
+    rgeos,
+    dplyr,
+    ggplot2,
+    stringr
 Depends: 
     tidyverse

@@ -3,12 +3,24 @@ library(lubridate)
 library(progress)
 library(tidyverse)
 library(tidyr)
+globalVariables(c('Country', 'Confirmed', 'Deaths'))
 
 
 #' getData
 #'
 #' Provides a General dataset of daily and Cumulative cases and deaths of covid-19
 #' @return a DataFrame grouped by Country and Date has the number of deaths and cases and daily deaths and daily cases
+#' @import RCurl
+#' @import lubridate
+#' @import progress
+#' @import tidyverse
+#' @import tidyr
+#' @import utils
+#' @import dplyr
+#' @import stringr
+#' @importMethodsFrom utils download.file read.csv
+#' @importMethodsFrom stringr str_extract
+#' @importMethodsFrom dplyr select rename mutate case_when group_by summarise arrange lag
 #' @export
 getData <- function(){
 
