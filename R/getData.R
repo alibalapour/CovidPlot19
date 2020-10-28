@@ -41,10 +41,11 @@ getData <- function(){
     if(! file.exists(path)){
       download.file(paste("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/",
                           date, sep = ''),
-                    destfile = path, method = "curl", quiet = T,)
+                    destfile = path, quiet = T,)
     }
 
     df <- read.csv(path)
+
 
     if(nrow(df) != 0){
       countryName <- ''
