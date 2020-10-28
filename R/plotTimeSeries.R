@@ -18,6 +18,12 @@ library(lubridate)
 #' @export
 plotTimeSeries <- function(startDate, endDate, country, type){
 
+  # error handling
+  tryCatch(startDate, stop('Please Enter a startDate in the function parameters!'))
+  tryCatch(endDate, stop('Please Enter a endDate in the function parameters!'))
+  tryCatch(country, stop('Please Enter a  country in the function parameters!'))
+  tryCatch(type, stop('Please Enter a type in the function parameters!'))
+
   df <- getData()
 
   df %>%

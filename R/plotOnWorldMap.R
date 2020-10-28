@@ -25,6 +25,11 @@ globalVariables(c('name'))
 #' @importMethodsFrom ggplot2 ggplot geom_sf aes_string scale_fill_viridis_c
 #' @export
 plotOnWorldMap <- function(date, type){
+
+  # error handling
+  tryCatch(date, stop('Please Enter a date in the function parameters!'))
+  tryCatch(type, stop('Please Enter a type in the parameters!'))
+
   main_df <- getData()
 
   df <- main_df
