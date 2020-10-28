@@ -23,7 +23,6 @@ globalVariables(c('Country', 'Confirmed', 'Deaths'))
 #' @importMethodsFrom dplyr select rename mutate case_when group_by summarise arrange lag
 #' @export
 getData <- function(){
-
   mainDF <- data.frame()
   dateInterval <- as.numeric(today() - as_date('2020-01-22') - 1)
   pb <- progress_bar$new(total = dateInterval)
