@@ -7,6 +7,8 @@
 
 <!-- badges: start -->
 
+[![Travis build
+status](https://travis-ci.com/alibalapour/CovidAtion19.svg?branch=master)](https://travis-ci.com/alibalapour/CovidAtion19)
 <!-- badges: end -->
 
 R package to get every day and cumulative data about Covid-19 and draw
@@ -31,38 +33,10 @@ devtools::install_github("alibalapour/CovidAtion19")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example:
 
 ``` r
-df <- CovidAtion19::getData()
-#> Warning: replacing previous import 'lubridate::union' by 'rgeos::union' when
-#> loading 'CovidAtion19'
-#> Warning: replacing previous import 'lubridate::setdiff' by 'rgeos::setdiff' when
-#> loading 'CovidAtion19'
-#> Warning: replacing previous import 'lubridate::intersect' by 'rgeos::intersect'
-#> when loading 'CovidAtion19'
-#> Warning: replacing previous import 'RCurl::complete' by 'tidyr::complete' when
-#> loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'arrange' when loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'case_when' when loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'filter' when loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'group_by' when loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'lag' when loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'left_join' when loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'mutate' when loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'rename' when loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'select' when loading 'CovidAtion19'
-#> No methods found in package 'dplyr' for request: 'summarise' when loading 'CovidAtion19'
-#> No methods found in package 'ggplot2' for request: 'aes' when loading 'CovidAtion19'
-#> No methods found in package 'ggplot2' for request: 'aes_string' when loading 'CovidAtion19'
-#> No methods found in package 'ggplot2' for request: 'geom_line' when loading 'CovidAtion19'
-#> No methods found in package 'ggplot2' for request: 'geom_sf' when loading 'CovidAtion19'
-#> No methods found in package 'ggplot2' for request: 'ggplot' when loading 'CovidAtion19'
-#> No methods found in package 'ggplot2' for request: 'labs' when loading 'CovidAtion19'
-#> No methods found in package 'ggplot2' for request: 'scale_fill_viridis_c' when loading 'CovidAtion19'
-#> No methods found in package 'stringr' for request: 'str_extract' when loading 'CovidAtion19'
-#> No methods found in package 'utils' for request: 'download.file' when loading 'CovidAtion19'
-#> No methods found in package 'utils' for request: 'read.csv' when loading 'CovidAtion19'
+df <- suppressWarnings(suppressMessages(CovidAtion19::getData()))
 ```
 
 ``` r

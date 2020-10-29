@@ -41,7 +41,7 @@ devtools::install_github("alibalapour/CovidAtion19")
 This is a basic example:
 
 ```{r example}
-df <- CovidAtion19::getData()
+df <- suppressWarnings(suppressMessages(CovidAtion19::getData()))
 ```
 
 ```{r example2}
