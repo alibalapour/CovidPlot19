@@ -35,3 +35,26 @@ And the development version from [GitHub](https://github.com/) with:
 devtools::install_github("alibalapour/CovidAtion19")
 ```
 
+## Example
+
+This is a basic example:
+
+```{r example}
+df <- CovidAtion19::getData()
+```
+
+```{r example2}
+head(df, 20)
+```
+
+```{r example3}
+CovidAtion19::plotOnWorldMap(date = '2020-05-03',
+                             type = 'Confirmed')
+```
+
+```{r example4}
+CovidAtion19::plotTimeSeries(startDate = '2020-03-10',
+                             endDate = '2020-10-10',
+                             country = 'US',
+                             type = 'DailyConfirmed')
+```
