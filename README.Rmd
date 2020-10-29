@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 # CovidAtion19
 
 <!-- badges: start -->
+[![Travis build status](https://travis-ci.com/alibalapour/CovidAtion19.svg?branch=master)](https://travis-ci.com/alibalapour/CovidAtion19)
 <!-- badges: end -->
 
 R package to get every day and cumulative data about Covid-19 and draw some plots about it. In this package, you can get a dataset includes daily new cases, new deaths, all cases, and all deaths grouped by Date and Country. Data used in this package are downloaded from Jhon Hopkins university's 
