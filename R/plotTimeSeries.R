@@ -1,6 +1,9 @@
 library(tidyverse)
 library(lubridate)
-
+library(ggplot2)
+library(dplyr)
+library(plotly)
+library(hrbrthemes)
 
 #' plotTimeSeries
 #'
@@ -13,17 +16,14 @@ library(lubridate)
 #' @import lubridate
 #' @import ggplot2
 #' @import dplyr
+#' @import plotly
+#' @import hrbrthemes
 #' @importMethodsFrom dplyr select rename mutate case_when group_by summarise arrange lag filter left_join
-#' @importMethodsFrom ggplot2 ggplot aes geom_line aes_string labs
+#' @importMethodsFrom ggplot2 ggplot aes geom_line aes_string labs geom_area
+#' @importMethodsFrom hrbrthemes theme_ipsum
+#' @importMethodsFrom plotly ggplotly
 #' @export
 plotTimeSeries <- function(startDate, endDate, country, type){
-
-  # error handling
-  tryCatch(startDate, stop('Please Enter a startDate in the function parameters!'))
-  tryCatch(endDate, stop('Please Enter a endDate in the function parameters!'))
-  tryCatch(country, stop('Please Enter a  country in the function parameters!'))
-  tryCatch(type, stop('Please Enter a type in the function parameters!'))
-
   df <- getData()
 
   df %>%
@@ -45,9 +45,14 @@ plotTimeSeries <- function(startDate, endDate, country, type){
     type == 'DailyDeaths' ~ 'Daily Deaths'
   )
 
-  df %>%
+
+
+  p <- df %>%
     ggplot(aes(x = Date)) +
+    geom_area(aes_string(y = type), fill="#69b3a2", alpha=0.5) +
     geom_line(aes_string(y = type), color="#69b3a2") +
-    labs(y = description)
+    theme_ipsum()
+
+  ggplotly(p)
 
 }

@@ -75,10 +75,10 @@ CovidAtion19::plotOnWorldMap(date = '2020-05-03',
 <img src="man/figures/README-example3-1.png" width="100%" />
 
 ``` r
-CovidAtion19::plotTimeSeries(startDate = '2020-03-10',
+suppressWarnings(suppressMessages(CovidAtion19::plotTimeSeries(startDate = '2020-03-10',
                              endDate = '2020-10-10',
                              country = 'US',
-                             type = 'DailyConfirmed')
+                             type = 'DailyConfirmed')))
 ```
 
 <img src="man/figures/README-example4-1.png" width="100%" />

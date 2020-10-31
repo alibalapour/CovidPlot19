@@ -29,6 +29,8 @@ Imports:
     rgeos,
     dplyr,
     ggplot2,
-    stringr
+    stringr,
+    plotly,
+    hrbrthemes
 Depends: 
     tidyverse
