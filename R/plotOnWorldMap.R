@@ -26,10 +26,6 @@ globalVariables(c('name'))
 #' @export
 plotOnWorldMap <- function(date, type){
 
-  # error handling
-  tryCatch(date, stop('Please Enter a date in the function parameters!'))
-  tryCatch(type, stop('Please Enter a type in the function parameters!'))
-
   main_df <- getData()
 
   df <- main_df
