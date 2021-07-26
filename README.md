@@ -3,7 +3,7 @@
 
 <img src="man/figures/logo.png" align="right" />
 
-# CovidAtion19
+# CovidPlot19
 
 <!-- badges: start -->
 
