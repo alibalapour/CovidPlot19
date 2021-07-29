@@ -8,7 +8,7 @@
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.com/alibalapour/CovidAtion19.svg?branch=master)](https://travis-ci.com/alibalapour/CovidAtion19)
+status](https://travis-ci.com/alibalapour/CovidAtion19.svg?branch=master)](https://travis-ci.com/alibalapour/CovidPlot19)
 <!-- badges: end -->
 
 This repo is an R package implemented to get covid19 data from Jhon Hopkins university’s [CSSEGISandData repository](https://github.com/CSSEGISandData/COVID-19) and draw some plots about the covid-19 pandemic. 
