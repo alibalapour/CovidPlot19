@@ -22,10 +22,19 @@ globalVariables(c('Country', 'Cases', 'Deaths'))
 #' @importMethodsFrom stringr str_extract
 #' @importMethodsFrom dplyr select rename mutate case_when group_by summarise arrange lag
 #' @export
-getData <- function(saveData=F){
+getData <- function(saveData=T){
 
+  # Create data folder
   if (saveData){
     dir.create('data/')
+    dir.create('dataframe/')
+  }
+
+  today = today()
+  today_filename = paste('dataframe/', today, ".csv", sep='')
+  if(file.exists(today_filename)){
+    df <- read.csv(today_filename)
+    return(df)
   }
 
   # Create mainDF that is the main data-frame for the covid statistics
@@ -128,6 +137,7 @@ getData <- function(saveData=F){
       TRUE ~ DailyCases
     )) -> mainDF
 
+  write.csv(mainDF, today_filename)
 
   return(mainDF)
 }
