@@ -28,7 +28,6 @@ plotTimeSeries <- function(startDate, endDate, country, type){
     filter(Country == country,
            Date >= startDate,
            Date <= endDate) -> df
-  # return(df)
 
   color <- case_when(
     type == 'Cases' ~ '#69b3a2',

@@ -21,6 +21,7 @@ globalVariables(c('Country', 'Cases', 'Deaths'))
 #' @importMethodsFrom utils download.file read.csv
 #' @importMethodsFrom stringr str_extract
 #' @importMethodsFrom dplyr select rename mutate case_when group_by summarise arrange lag
+#' @importMethodsFrom lubridate today
 #' @export
 getData <- function(saveData=T){
 
