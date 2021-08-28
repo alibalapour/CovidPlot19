@@ -15,10 +15,11 @@ library(lubridate)
 #' @import dplyr
 #' @import plotly
 #' @import hrbrthemes
+#' @import orca
 #' @importMethodsFrom dplyr select rename mutate case_when group_by summarise arrange lag filter left_join
 #' @importMethodsFrom ggplot2 ggplot aes geom_line aes_string labs
 #' @export
-plotTimeSeries <- function(startDate, endDate, country, type){
+plotTimeSeries <- function(startDate, endDate, country, type, static=F){
 
   df <- getData()
 
@@ -56,7 +57,12 @@ plotTimeSeries <- function(startDate, endDate, country, type){
     theme_ipsum()
 
   # Turn it interactive with ggplotly
-  p <- ggplotly(p)
-  p
+  if(static){
+    p
+  }
+  else{
+    ggplotly(p)
+  }
+
 
 }

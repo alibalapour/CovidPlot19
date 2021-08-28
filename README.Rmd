@@ -1,12 +1,13 @@
 ---
 output: github_document
+always_allow_html: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <img src="man/figures/logo.png" align="right" />
 
-```{r, include = FALSE}
+```{r, include = FALSE, echo=FALSE,results='hide',fig.keep='all'}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -29,8 +30,7 @@ You can install the development version from [GitHub](https://github.com/alibala
 
 ``` {r}
 # install.packages("devtools")
-# library(devtools)
-# install_github("alibalapour/CovidPlot19")
+devtools::install_github("alibalapour/CovidPlot19")
 ```
 
 ## Example
@@ -38,23 +38,21 @@ You can install the development version from [GitHub](https://github.com/alibala
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-# library(CovidPlot19)
-# # df <- suppressWarnings(suppressMessages(getData()))
-# df <- CovidPlot19:::getData()
-# head(df, 20)
+df <- suppressWarnings(suppressMessages(CovidPlot19::getData()))
+head(df, 20)
 ```
 
 
 ```{r plotWorldMap}
-# plotOnWorldMap(date = '2020-05-03', type = 'Cases')
+CovidPlot19::plotOnWorldMap(date = '2020-05-03', type = 'Cases')
 ```
 
 
 
-```{r plotTimeSeries, echo = FALSE}
-# plotTimeSeries(startDate = '2020-03-10',
-#                endDate = '2020-10-10',
-#                country = 'US',
-#                type = 'DailyCases'
-#                )
+```{r plotTimeSeries}
+CovidPlot19::plotTimeSeries(startDate = '2020-06-10',
+               endDate = '2021-07-10',
+               country = 'Germany',
+               type = 'Cases'
+               )
 ```

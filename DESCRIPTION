@@ -19,6 +19,7 @@ Imports:
     ggplot2,
     hrbrthemes,
     lubridate,
+    orca,
     plotly,
     progress,
     RCurl,
