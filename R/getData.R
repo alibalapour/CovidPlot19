@@ -13,7 +13,6 @@ globalVariables(c('Country', 'Cases', 'Deaths'))
 #' @import RCurl
 #' @import lubridate
 #' @import progress
-#' @import tidyverse
 #' @import tidyr
 #' @import utils
 #' @import dplyr

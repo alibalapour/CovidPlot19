@@ -19,7 +19,8 @@ You can install the development version from
 
 ``` r
 # install.packages("devtools")
-# devtools::install_github("alibalapour/CovidPlot19")
+# library(devtools)
+# install_github("alibalapour/CovidPlot19")
 ```
 
 ## Example
@@ -28,7 +29,8 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 # library(CovidPlot19)
-# df <- suppressWarnings(suppressMessages(getData()))
+# # df <- suppressWarnings(suppressMessages(getData()))
+# df <- CovidPlot19:::getData()
 # head(df, 20)
 ```
 
