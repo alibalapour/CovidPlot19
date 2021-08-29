@@ -1,3 +1,4 @@
+
 library(tidyverse)
 theme_set(theme_bw())
 library(sf)
@@ -55,6 +56,12 @@ plotOnWorldMap <- function(date, type){
   # Ploting stage
   ggplot(data = new_df) +
     geom_sf(aes_string(fill = type)) +
-    scale_fill_viridis_c(option = "plasma", trans = "sqrt")
+    scale_fill_viridis_c(begin = 0.1,
+                         end = 0.7,
+                         option = "inferno",
+                         trans = "sqrt",
+                         direction = -1
+                         ) +
+    labs(title = paste(type, 'in the world at', date))
 
 }
